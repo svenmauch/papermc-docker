@@ -3,7 +3,7 @@ version: "3.9"
 services:
   minecraft:
     build: .
-    container_name: "papermc"
+    container_name: "minecraft"
     environment:
       MEMORYSIZE: "2G"
     volumes:
