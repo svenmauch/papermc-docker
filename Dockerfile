@@ -57,11 +57,9 @@ COPY /docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 # Install gosu
-RUN set -eux; \
-	apt-get update; \
-	apt-get install -y gosu; \
-	rm -rf /var/lib/apt/lists/*; \
-# verify that the binary works
+wget -q "https://github.com/tianon/gosu/releases/download/1.12/gosu-amd64" -O /usr/local/bin/gosu
+chmod +x /usr/local/bin/gosu
+# verify that gosu works
 	gosu nobody true
 
 # Entrypoint
