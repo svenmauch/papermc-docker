@@ -60,7 +60,7 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 RUN wget -q "https://github.com/tianon/gosu/releases/download/1.12/gosu-amd64" -O /usr/local/bin/gosu
 RUN chmod +x /usr/local/bin/gosu
 # verify that gosu works
-	gosu nobody true
+RUN gosu nobody true
 
 # Entrypoint
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
