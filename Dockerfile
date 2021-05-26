@@ -1,7 +1,7 @@
 ########################################################
 ############## We use a java base image ################
 ########################################################
-FROM openjdk:17 AS build
+FROM openjdk:16 AS build
 
 MAINTAINER Sven Mauch <sven@mauch.me>
 
@@ -22,7 +22,7 @@ RUN mv /opt/minecraft/cache/patched*.jar paperspigot.jar
 ########################################################
 ############## Running environment #####################
 ########################################################
-FROM openjdk:17 AS runtime
+FROM openjdk:16 AS runtime
 
 # Working directory
 WORKDIR /data
