@@ -1,9 +1,9 @@
 ########################################################
 ############## We use a java base image ################
 ########################################################
-FROM openjdk:11 AS build
+FROM openjdk:17 AS build
 
-MAINTAINER Marc Tönsing <marc@marc.tv>
+MAINTAINER Sven Mauch <sven@mauch.me>
 
 ARG paperspigot_ci_url=https://papermc.io/api/v1/paper/1.16.5/latest/download
 ENV PAPERSPIGOT_CI_URL=$paperspigot_ci_url
@@ -14,7 +14,7 @@ WORKDIR /opt/minecraft
 ADD ${PAPERSPIGOT_CI_URL} paperclip.jar
 
 # Run paperclip and obtain patched jar
-RUN /usr/local/openjdk-11/bin/java -jar /opt/minecraft/paperclip.jar; exit 0
+RUN /usr/local/openjdk-17/bin/java -jar /opt/minecraft/paperclip.jar; exit 0
 
 # Copy built jar
 RUN mv /opt/minecraft/cache/patched*.jar paperspigot.jar
@@ -22,7 +22,7 @@ RUN mv /opt/minecraft/cache/patched*.jar paperspigot.jar
 ########################################################
 ############## Running environment #####################
 ########################################################
-FROM openjdk:11 AS runtime
+FROM openjdk:17 AS runtime
 
 # Working directory
 WORKDIR /data
