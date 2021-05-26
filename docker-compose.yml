@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  minecraft:
+    build: .
+    container_name: "papermc"
+    environment:
+      MEMORYSIZE: "2G"
+    volumes:
+      - "./minecraft-data:/data:rw"
+    ports:
+      - "25565:25565"
+    stdin_open: true
+    tty: true

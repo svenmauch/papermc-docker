@@ -1,0 +1,1 @@
+Based on the work of [mtoensing](https://github.com/mtoensing/Docker-Minecraft-PaperMC-Server/commits?author=mtoensing) and [Felix Klauke](https://github.com/FelixKlauke/paperspigot-docker)
