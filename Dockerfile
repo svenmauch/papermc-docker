@@ -14,7 +14,7 @@ WORKDIR /opt/minecraft
 ADD ${PAPERSPIGOT_CI_URL} paperclip.jar
 
 # Run paperclip and obtain patched jar
-RUN /usr/local/openjdk-17/bin/java -jar /opt/minecraft/paperclip.jar; exit 0
+RUN /usr/bin/java -jar /opt/minecraft/paperclip.jar; exit 0
 
 # Copy built jar
 RUN mv /opt/minecraft/cache/patched*.jar paperspigot.jar
