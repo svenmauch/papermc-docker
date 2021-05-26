@@ -57,7 +57,7 @@ COPY /docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 # Install gosu
-RUN curl "https://github.com/tianon/gosu/releases/download/1.12/gosu-amd64" -o /usr/local/bin/gosu
+RUN curl -L "https://github.com/tianon/gosu/releases/download/1.12/gosu-amd64" -o /usr/local/bin/gosu
 RUN chmod +x /usr/local/bin/gosu
 # verify that gosu works
 RUN gosu nobody true
